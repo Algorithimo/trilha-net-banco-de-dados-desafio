@@ -1,0 +1,93 @@
+-- 1 
+
+SELECT 
+	Nome,
+	Ano
+FROM Filmes
+
+-- 2
+SELECT
+	NOME,
+	ANO,
+	DURACAO
+FROM FILMES
+ORDER BY ANO ASC
+
+-- 3
+SELECT
+	NOME,
+	ANO,
+	DURACAO
+FROM FILMES
+WHERE 
+	ANO = 1985
+
+-- 4
+SELECT
+	NOME,
+	ANO,
+	DURACAO
+FROM FILMES
+WHERE 
+	ANO = 1997
+	
+-- 5
+SELECT
+	NOME,
+	ANO,
+	DURACAO
+FROM FILMES
+WHERE 
+	ANO > 2000
+
+-- 6
+SELECT
+	NOME,
+	ANO,
+	DURACAO
+FROM FILMES
+WHERE 
+		Duracao > 100 
+	AND Duracao <= 150
+ORDER BY
+	Duracao ASC
+
+-- 7
+SELECT
+	ANO,
+	COUNT(*) AS Quantidade
+FROM FILMES
+GROUP BY
+	ANO
+ORDER BY
+	COUNT(*) DESC
+
+-- 8 
+SELECT 
+	*
+FROM Atores
+WHERE
+	Genero = 'M'
+
+-- 9 
+SELECT 
+	*
+FROM Atores
+WHERE
+	Genero = 'F'
+ORDER BY
+	PrimeiroNome ASC
+
+-- 10
+
+SELECT
+	F.Nome,
+	G.Genero
+FROM Filmes F
+RIGHT JOIN Generos G ON G.FK_ = F.Id
+
+SELECT * FROM Generos
+SELECT * FROM Filmes
+
+SP_HELP GENEROS
+SP_HELP Filmes
